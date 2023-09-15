@@ -1,0 +1,10 @@
+.form-element{
+    display:block;
+    margin: 20px auto;
+}
+
+.detail-header{
+    font-weight: bolder;
+    margin: 30px auto;
+    width:230px;
+}

@@ -1,0 +1,50 @@
+<h3 class="cart-header">Your Shopping Cart</h3>
+
+<button
+  type="button"
+  class="btn btn-dark add-button"
+  (click)="navigateToAddItem()"
+>
+  Add Item
+</button>
+
+<div class="shopping-cart">
+  <!-- <ng-template *ngIf="cartItems.length>0; else noItem"> -->
+  <div class="list-group">
+    <div
+      class="list-group-item list-group-item-action cart-item"
+      *ngFor="let item of cartItems"
+    >
+      <div class="row">
+        <div class="col-3">
+          <div class="item-name">{{ item.name }}</div>
+          <div class="item-price">
+            Price: {{ item.price | currency: 'INR':'symbol' }}
+          </div>
+        </div>
+        <div class="col-6">
+          <button
+            type="button"
+            class="btn btn-secondary edit-button"
+            (click)="editItem(item.id)"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger remove-button"
+            (click)="removeItem(item.id)"
+          >
+            Remove
+          </button>
+          <!-- <a routerLink="" class="btn btn-secondary edit-button">Edit</a>
+                          <a class="btn btn-danger remove-button" click="">Remove</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </ng-template> -->
+  <ng-template #noItem>
+    <div>Your cart is empty!</div>
+  </ng-template>
+</div>

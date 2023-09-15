@@ -1,0 +1,6 @@
+<h4 class="detail-header">Enter details of item</h4>
+<form #itemForm="ngForm" (ngSubmit)="addItem(itemForm)">
+    <input class="form-element" type="text" name="name" placeholder="Enter Name" [(ngModel)]="name">
+    <input class="form-element" type="text" name="price" placeholder="Enter Price" [(ngModel)]="price">
+    <button class="btn btn-secondary form-element">Add Item</button>
+</form>
